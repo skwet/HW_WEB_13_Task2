@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Quotes To Scrape{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-end mb-4">
+            {% if user.is_authenticated %}
+                <p class="mr-3">Welcome, {{ user.username }}!</p>
+                <a href="{% url 'users:logout' %}" class="btn btn-primary">Logout</a>
+                <a href="{% url 'quotes:add_author' %}" class="btn btn-success ml-2">Add Author</a>
+                <a href="{% url 'quotes:add_quote' %}" class="btn btn-success ml-2">Add Quote</a>
+            {% else %}
+                <a href="{% url 'users:login' %}" class="btn btn-primary mr-3">Login</a>
+                <a href="{% url 'users:register' %}" class="btn btn-secondary">Register</a>
+            {% endif %}
+        </div>
+        <h1 class="text-center mb-4 ml-4">{% block header %}Quotes To Scrape{% endblock %}</h1>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

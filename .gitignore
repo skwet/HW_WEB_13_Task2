@@ -1,0 +1,6 @@
+hw_web_10/hw_web_10/__pycache__/
+hw_web_10/quotes/__pycache__/
+hw_web_10/quotes/migrations/
+hw_web_10/users/__pycache__/
+hw_web_10/users/migrations/
+.env

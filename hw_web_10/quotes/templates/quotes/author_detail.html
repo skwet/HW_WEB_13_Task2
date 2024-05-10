@@ -1,0 +1,15 @@
+{% extends './base.html' %}
+
+{% block title %}Author{% endblock %}
+{% block header %}Author{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">{{ author.fullname }}</h2>
+        <p class="card-text">Born: {{ author.born_date }}</p>
+        <p class="card-text">Place: {{ author.born_location }}</p>
+        <p class="card-text">{{ author.description }}</p>
+    </div>
+</div>
+{% endblock %}
